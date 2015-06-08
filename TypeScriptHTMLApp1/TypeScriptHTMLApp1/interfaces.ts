@@ -43,4 +43,19 @@ function createPrinter(config: IPrinterConfig) {
     return printer;
 }
 
-var printer = createPrinter({colour:"white"});
+var printer = createPrinter({ colour: "white" });
+
+// function types
+interface IParseNumberFunction {
+    (text: string, base: number): number;
+}
+
+var parseNumber: IParseNumberFunction = function(text, base) {
+    return parseInt(text, base);
+};
+// lambda syntax
+var parseNumber2: IParseNumberFunction = (text, base) => parseInt(text, base);
+
+var numberOne = parseNumber("1", 10);
+var numberTwo = parseNumber2("2", 10);
+

@@ -24,4 +24,11 @@ function createPrinter(config) {
     return printer;
 }
 var printer = createPrinter({ colour: "white" });
+var parseNumber = function (text, base) {
+    return parseInt(text, base);
+};
+// lambda syntax
+var parseNumber2 = function (text, base) { return parseInt(text, base); };
+var numberOne = parseNumber("1", 10);
+var numberTwo = parseNumber2("2", 10);
 //# sourceMappingURL=interfaces.js.map
