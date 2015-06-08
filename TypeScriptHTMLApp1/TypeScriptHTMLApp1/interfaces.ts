@@ -26,4 +26,19 @@ printLabel2(o1);
 var o2 = { label: "sup" };
 printLabel2(o2);
 
+// optional properties
+interface IPrinterConfig {
+    isCamelCase?: boolean;
+    colour?: string;
+}
 
+function createPrinter(config: IPrinterConfig) {
+    var printer = { id: -1, colour: "blue", isCamelCase: true };
+    if (config.colour) {
+        printer.colour = config.colour;
+    }
+    if (config.isCamelCase) {
+        printer.isCamelCase = config.isCamelCase;
+    }
+    return printer;
+}

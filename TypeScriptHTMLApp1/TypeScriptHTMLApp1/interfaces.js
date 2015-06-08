@@ -13,4 +13,14 @@ printLabel2(o1);
 // o2 implements ILabellable implicitely
 var o2 = { label: "sup" };
 printLabel2(o2);
+function createPrinter(config) {
+    var printer = { id: -1, colour: "blue", isCamelCase: true };
+    if (config.colour) {
+        printer.colour = config.colour;
+    }
+    if (config.isCamelCase) {
+        printer.isCamelCase = config.isCamelCase;
+    }
+    return printer;
+}
 //# sourceMappingURL=interfaces.js.map
