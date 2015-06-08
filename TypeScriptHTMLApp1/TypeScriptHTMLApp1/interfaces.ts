@@ -59,3 +59,16 @@ var parseNumber2: IParseNumberFunction = (text, base) => parseInt(text, base);
 var numberOne = parseNumber("1", 10);
 var numberTwo = parseNumber2("2", 10);
 
+// array types: define the type of the index and values
+interface IStringArray {
+    [index: number]: string;
+}
+var strings: IStringArray = ["a", "b", "c"];
+
+interface IPrinterConfigArray {
+    [index: number]: IPrinterConfig;
+}
+var printerConfigArray: IPrinterConfigArray = [{colour: "red"}, {isCamelCase: false}];
+
+
+

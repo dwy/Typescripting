@@ -31,4 +31,6 @@ var parseNumber = function (text, base) {
 var parseNumber2 = function (text, base) { return parseInt(text, base); };
 var numberOne = parseNumber("1", 10);
 var numberTwo = parseNumber2("2", 10);
+var strings = ["a", "b", "c"];
+var printerConfigArray = [{ colour: "red" }, { isCamelCase: false }];
 //# sourceMappingURL=interfaces.js.map
