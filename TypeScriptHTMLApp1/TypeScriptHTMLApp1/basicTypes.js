@@ -22,4 +22,6 @@ something = "not a number";
 // using any for mixed-typed arrays
 var things = ["one", 2, false];
 things[1] = 1;
+// void functions
+function printMessage(message) { console.log(message); }
 //# sourceMappingURL=basicTypes.js.map

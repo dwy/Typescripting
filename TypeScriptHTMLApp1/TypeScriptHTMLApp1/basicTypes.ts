@@ -23,3 +23,5 @@ something = "not a number";
 var things: any[] = ["one", 2, false];
 things[1] = 1;
 
+// void functions
+function printMessage(message): void { console.log(message); }
