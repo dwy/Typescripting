@@ -15,12 +15,13 @@ var o2 = { label: "sup" };
 printLabel2(o2);
 function createPrinter(config) {
     var printer = { id: -1, colour: "blue", isCamelCase: true };
-    if (config.colour) {
+    if (typeof config.colour != 'undefined') {
         printer.colour = config.colour;
     }
-    if (config.isCamelCase) {
+    if (typeof config.isCamelCase != 'undefined') {
         printer.isCamelCase = config.isCamelCase;
     }
     return printer;
 }
+var printer = createPrinter({ colour: "white" });
 //# sourceMappingURL=interfaces.js.map
