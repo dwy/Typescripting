@@ -4,5 +4,13 @@ function printLabel(objectWithLabel) {
 }
 var labelled = { name: "Guy", label: "what a nice label!" };
 printLabel(labelled);
-// printLabel({}); error: no label property
+function printLabel2(labellable) {
+    console.log(labellable.label);
+}
+// typed parameter
+var o1 = { label: "myLabel" };
+printLabel2(o1);
+// o2 implements ILabellable implicitely
+var o2 = { label: "sup" };
+printLabel2(o2);
 //# sourceMappingURL=interfaces.js.map
