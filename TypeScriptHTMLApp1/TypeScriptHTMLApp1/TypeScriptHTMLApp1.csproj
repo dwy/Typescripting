@@ -19,6 +19,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.css" />
+    <Content Include="classTypes.html" />
     <Content Include="greeter.html" />
     <Content Include="index.html" />
     <Content Include="web.config" />
