@@ -26,6 +26,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="basicTypes.ts" />
+    <TypeScriptCompile Include="classTypes.ts" />
     <TypeScriptCompile Include="greeter.ts" />
     <TypeScriptCompile Include="interfaces.ts" />
   </ItemGroup>
