@@ -33,4 +33,5 @@ var numberOne = parseNumber("1", 10);
 var numberTwo = parseNumber2("2", 10);
 var strings = ["a", "b", "c"];
 var printerConfigArray = [{ colour: "red" }, { isCamelCase: false }];
+var dict = { "a": "1", "length": "12" };
 //# sourceMappingURL=interfaces.js.map

@@ -70,5 +70,10 @@ interface IPrinterConfigArray {
 }
 var printerConfigArray: IPrinterConfigArray = [{colour: "red"}, {isCamelCase: false}];
 
+// dictionaries
+interface IDictionary {
+    [index: string]: string;
+    // length: number; // error: properties must be a subtype of the string index (in this case string).
+}
 
-
+var dict: IDictionary = {"a" : "1", "length": "12"};
