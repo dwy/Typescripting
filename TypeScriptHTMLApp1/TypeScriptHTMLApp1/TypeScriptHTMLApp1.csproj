@@ -27,6 +27,7 @@
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="basicTypes.ts" />
     <TypeScriptCompile Include="greeter.ts" />
+    <TypeScriptCompile Include="interfaces.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">
