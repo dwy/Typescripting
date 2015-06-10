@@ -74,3 +74,24 @@ square.x = 12;
 square.y = -7;
 square.length = 42;
 square.colour = "white";
+
+// hybrid types: acting as a function and an object
+interface IHybridCounter {
+    (start: number): string; // function definition
+    value: number;  // object property
+    reset(): void;  // object function
+}
+
+// defining an hybrid type
+var counter = <IHybridCounter> function (start: number) {
+    this.value = start;
+    return "started at " + start;
+};
+counter.reset = () => { };
+counter.value = 12;
+
+// using the hybrid type
+var name: string = counter(12);
+var counterValue: number = counter.value;
+counter.reset();
+

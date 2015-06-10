@@ -45,4 +45,15 @@ square.x = 12;
 square.y = -7;
 square.length = 42;
 square.colour = "white";
+// defining an hybrid type
+var counter = function (start) {
+    this.value = start;
+    return "started at " + start;
+};
+counter.reset = function () { };
+counter.value = 12;
+// using the hybrid type
+var name = counter(12);
+var counterValue = counter.value;
+counter.reset();
 //# sourceMappingURL=classTypes.js.map
