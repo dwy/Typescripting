@@ -89,4 +89,8 @@ var PersonFactory = (function () {
 })();
 var newPerson = PersonFactory.create("Albert");
 document.body.innerHTML += "<br/> person count: " + PersonFactory.count;
+// constructor function
+var person1 = new Person("Alfonso", 20);
+var personConstructor = Person;
+var person2 = new personConstructor("Bud", 1000);
 //# sourceMappingURL=classes.js.map

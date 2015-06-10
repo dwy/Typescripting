@@ -78,3 +78,10 @@ class PersonFactory {
 var newPerson = PersonFactory.create("Albert");
 
 document.body.innerHTML += "<br/> person count: " + PersonFactory.count;
+
+// constructor function
+var person1 = new Person("Alfonso", 20);
+
+var personConstructor: typeof Person = Person;
+var person2 = new personConstructor("Bud", 1000);
+
