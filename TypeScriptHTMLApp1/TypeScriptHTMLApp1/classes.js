@@ -4,6 +4,7 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
+// ReSharper disable InconsistentNaming
 var Animal = (function () {
     function Animal(name) {
         this.name = name;
@@ -53,4 +54,26 @@ var Person = (function () {
 })();
 var person = new Person("Chateaubriand", 50000);
 document.body.innerHTML += person.name;
+// accessors: get and set
+var LazyStudent = (function () {
+    function LazyStudent(name) {
+        this._name = name;
+    }
+    Object.defineProperty(LazyStudent.prototype, "name", {
+        get: function () {
+            return this._name + " (from getter)";
+        },
+        set: function (newName) {
+            if (this._name !== newName) {
+                this._name = newName + " (from setter)";
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return LazyStudent;
+})();
+var lazyStudent = new LazyStudent("First Name");
+lazyStudent.name = "Second name";
+document.body.innerHTML += "<br/>" + lazyStudent.name;
 //# sourceMappingURL=classes.js.map

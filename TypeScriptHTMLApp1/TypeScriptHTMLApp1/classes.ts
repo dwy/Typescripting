@@ -1,4 +1,5 @@
-﻿class Animal {
+﻿// ReSharper disable InconsistentNaming
+class Animal {
     weight: number;
     constructor(public name: string) {
         this.weight = 0.1;
@@ -43,3 +44,25 @@ class Person {
 var person = new Person("Chateaubriand", 50000);
 
 document.body.innerHTML += person.name;
+
+// accessors: get and set
+class LazyStudent {
+    private _name: string;
+
+    constructor(name: string) { this._name = name; }
+
+    get name(): string {
+        return this._name + " (from getter)";
+    }
+
+    set name(newName: string) {
+        if (this._name !== newName) {
+            this._name = newName + " (from setter)";
+        }
+    }
+}
+
+var lazyStudent = new LazyStudent("First Name");
+lazyStudent.name = "Second name";
+
+document.body.innerHTML += "<br/>" + lazyStudent.name;
