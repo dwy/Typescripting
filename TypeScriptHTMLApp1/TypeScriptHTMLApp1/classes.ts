@@ -13,10 +13,10 @@ class Lion extends Animal {
         super("Lion");
         this.weight = 120;
     }
-    jump(distance = 4) {
+    jump(distance: number = 4) {
         var preJumpAction = this.name + " roars and ";
         var jumpAction = super.jump(distance); // calling base method
-        return preJumpAction + jumpAction; 
+        return preJumpAction + jumpAction;
     }
 }
 
