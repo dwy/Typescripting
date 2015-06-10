@@ -32,4 +32,15 @@ var Lion = (function (_super) {
 var lion = new Lion();
 var jump = lion.jump(12);
 document.body.innerHTML = jump;
+// public / private modifiers
+var Dog = (function (_super) {
+    __extends(Dog, _super);
+    // private weight: number; // error: private is incompatible with the public definition in the base class
+    function Dog() {
+        _super.call(this, "Dog");
+        this.favouriteFood = "Royal Canin";
+        this.height = 0.3;
+    }
+    return Dog;
+})(Animal);
 //# sourceMappingURL=classes.js.map

@@ -23,3 +23,16 @@ class Lion extends Animal {
 var lion = new Lion();
 var jump: string = lion.jump(12);
 document.body.innerHTML = jump;
+
+// public / private modifiers
+class Dog extends Animal {
+    private favouriteFood: string;
+    height: number; // public by default
+    // private weight: number; // error: private is incompatible with the public definition in the base class
+    constructor() {
+        super("Dog");
+        this.favouriteFood = "Royal Canin";
+        this.height = 0.3;
+    }
+}
+
