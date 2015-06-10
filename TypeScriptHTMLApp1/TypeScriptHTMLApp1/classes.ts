@@ -36,3 +36,10 @@ class Dog extends Animal {
     }
 }
 
+// parameter properties: create and initialise public and private properties
+class Person {
+    constructor(public name: string, private salary: number) { }
+}
+var person = new Person("Chateaubriand", 50000);
+
+document.body.innerHTML += person.name;

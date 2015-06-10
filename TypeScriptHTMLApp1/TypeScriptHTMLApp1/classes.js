@@ -43,4 +43,14 @@ var Dog = (function (_super) {
     }
     return Dog;
 })(Animal);
+// parameter properties: create and initialise public and private properties
+var Person = (function () {
+    function Person(name, salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+    return Person;
+})();
+var person = new Person("Chateaubriand", 50000);
+document.body.innerHTML += person.name;
 //# sourceMappingURL=classes.js.map
