@@ -85,3 +85,14 @@ var person1 = new Person("Alfonso", 20);
 var personConstructor: typeof Person = Person;
 var person2 = new personConstructor("Bud", 1000);
 
+// using classes as interfaces
+class Point {
+    x: number;
+    y: number;
+}
+
+interface Point3D extends Point {
+    z: number;
+}
+
+var point3d: Point3D = { x: 1, y: 2, z: 3 };

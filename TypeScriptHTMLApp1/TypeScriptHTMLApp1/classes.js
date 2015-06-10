@@ -93,4 +93,11 @@ document.body.innerHTML += "<br/> person count: " + PersonFactory.count;
 var person1 = new Person("Alfonso", 20);
 var personConstructor = Person;
 var person2 = new personConstructor("Bud", 1000);
+// using classes as interfaces
+var Point = (function () {
+    function Point() {
+    }
+    return Point;
+})();
+var point3d = { x: 1, y: 2, z: 3 };
 //# sourceMappingURL=classes.js.map
