@@ -29,9 +29,9 @@
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="basicTypes.ts" />
-    <TypeScriptCompile Include="modules\modules.ts" />
-    <TypeScriptCompile Include="modules\validation_classes.ts" />
-    <TypeScriptCompile Include="modules\validation_interfaces.ts" />
+    <TypeScriptCompile Include="modules\internal\modules.ts" />
+    <TypeScriptCompile Include="modules\internal\validation_classes.ts" />
+    <TypeScriptCompile Include="modules\internal\validation_interfaces.ts" />
     <TypeScriptCompile Include="classes.ts" />
     <TypeScriptCompile Include="classTypes.ts" />
     <TypeScriptCompile Include="greeter.ts" />

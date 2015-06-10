@@ -1,4 +1,5 @@
-﻿module Validation {
+﻿/// <reference path="validation_interfaces.ts"/>
+module Validation {
     export class ValidatorFactory {
         static create(): StringValidator {
             return new EvenLengthStringValidator();
