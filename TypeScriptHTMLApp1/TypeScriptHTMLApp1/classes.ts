@@ -66,3 +66,15 @@ var lazyStudent = new LazyStudent("First Name");
 lazyStudent.name = "Second name";
 
 document.body.innerHTML += "<br/>" + lazyStudent.name;
+
+// static members
+class PersonFactory {
+    public static count: number = 0;
+    static create(name: string) {
+        PersonFactory.count++;
+        return new Person(name, 0);
+    }
+}
+var newPerson = PersonFactory.create("Albert");
+
+document.body.innerHTML += "<br/> person count: " + PersonFactory.count;

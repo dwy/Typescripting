@@ -76,4 +76,17 @@ var LazyStudent = (function () {
 var lazyStudent = new LazyStudent("First Name");
 lazyStudent.name = "Second name";
 document.body.innerHTML += "<br/>" + lazyStudent.name;
+// static members
+var PersonFactory = (function () {
+    function PersonFactory() {
+    }
+    PersonFactory.create = function (name) {
+        PersonFactory.count++;
+        return new Person(name, 0);
+    };
+    PersonFactory.count = 0;
+    return PersonFactory;
+})();
+var newPerson = PersonFactory.create("Albert");
+document.body.innerHTML += "<br/> person count: " + PersonFactory.count;
 //# sourceMappingURL=classes.js.map
