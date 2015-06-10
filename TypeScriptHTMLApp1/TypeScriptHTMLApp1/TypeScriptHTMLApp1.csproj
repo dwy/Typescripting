@@ -19,6 +19,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.css" />
+    <Content Include="modules.html" />
     <Content Include="classes.html" />
     <Content Include="classTypes.html" />
     <Content Include="greeter.html" />
@@ -28,6 +29,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="basicTypes.ts" />
+    <TypeScriptCompile Include="modules.ts" />
     <TypeScriptCompile Include="classes.ts" />
     <TypeScriptCompile Include="classTypes.ts" />
     <TypeScriptCompile Include="greeter.ts" />
