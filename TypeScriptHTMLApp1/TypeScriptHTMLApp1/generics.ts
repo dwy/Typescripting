@@ -61,33 +61,38 @@ function create<T>(classType: {new(): T;}): T {
     return new classType();
 }
 
-class Tester { }
+class Tester { label: any; }
 
 var testerInstance: Tester = create(Tester);
 
 // constraint on prototype
-function findLabel<T extends Tester, U>(element: {
-        new(): T;
-        prototype: {label: U}}): U { // must have 'label' property
+function findLabel<T extends Tester, U>(classType: {
+    new (): T;
+    prototype: { label: U } }): U { // must have 'label' property
 
-    return element.prototype.label;
+    return new classType().label;
 }
 
 class Tester1 extends Tester {
-    label: TesterLabel1;
-}
-class TesterLabel1 {
-    numberOfCases: number;
+    label: { numberOfCases: number; };
+    constructor() {
+        super();
+        this.label = { numberOfCases : 12 };
+    }
 }
 
 class Tester2 extends Tester {
-    label: TesterLabel2;
-}
-class TesterLabel2 {
-    nameOfPhase: string;
+    label: { nameOfPhase: string; };
+    constructor() {
+        super();
+        this.label = { nameOfPhase : "phase 1"};
+    }
 }
 
 var numberOfCases: number = findLabel(Tester1).numberOfCases;
 var nameOfPhase: string = findLabel(Tester2).nameOfPhase;
-// error: TesterLabel2 has no property 'numberOfCases'
+// error: Tester2.label object has no property 'numberOfCases'
 // var numberOfCases: number = findLabel(Tester2).numberOfCases;
+
+document.body.innerHTML += "numberOfCases: " + numberOfCases + "<br/>";
+document.body.innerHTML += "nameOfPhase: " + nameOfPhase + "<br/>";

@@ -54,35 +54,29 @@ var Tester = (function () {
 })();
 var testerInstance = create(Tester);
 // constraint on prototype
-function findLabel(element) {
-    return element.prototype.label;
+function findLabel(classType) {
+    return new classType().label;
 }
 var Tester1 = (function (_super) {
     __extends(Tester1, _super);
     function Tester1() {
-        _super.apply(this, arguments);
+        _super.call(this);
+        this.label = { numberOfCases: 12 };
     }
     return Tester1;
 })(Tester);
-var TesterLabel1 = (function () {
-    function TesterLabel1() {
-    }
-    return TesterLabel1;
-})();
 var Tester2 = (function (_super) {
     __extends(Tester2, _super);
     function Tester2() {
-        _super.apply(this, arguments);
+        _super.call(this);
+        this.label = { nameOfPhase: "phase 1" };
     }
     return Tester2;
 })(Tester);
-var TesterLabel2 = (function () {
-    function TesterLabel2() {
-    }
-    return TesterLabel2;
-})();
 var numberOfCases = findLabel(Tester1).numberOfCases;
 var nameOfPhase = findLabel(Tester2).nameOfPhase;
-// error: TesterLabel2 has no property 'numberOfCases'
-// var numberOfCases: number = findLabel(Tester2).numberOfCases; 
+// error: Tester2.label object has no property 'numberOfCases'
+// var numberOfCases: number = findLabel(Tester2).numberOfCases;
+document.body.innerHTML += "numberOfCases: " + numberOfCases + "<br/>";
+document.body.innerHTML += "nameOfPhase: " + nameOfPhase + "<br/>";
 //# sourceMappingURL=generics.js.map
