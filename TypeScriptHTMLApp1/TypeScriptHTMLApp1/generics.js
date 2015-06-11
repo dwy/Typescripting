@@ -35,4 +35,16 @@ function searchText(somewhere, element) {
 }
 var index = searchText({ text: "abc" }, "b");
 document.body.innerHTML += index + "<br/>";
+// using class types in generics
+// because the type information is erased in the compiled javascript,
+// need to refer to the type by its constructor function: 'new()'
+function create(classType) {
+    return new classType();
+}
+var Tester = (function () {
+    function Tester() {
+    }
+    return Tester;
+})();
+var testerInstance = create(Tester);
 //# sourceMappingURL=generics.js.map

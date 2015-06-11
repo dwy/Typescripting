@@ -53,3 +53,14 @@ var index: number = searchText({ text: "abc" }, "b");
 
 document.body.innerHTML += index + "<br/>";
 
+// using class types in generics
+
+// because the type information is erased in the compiled javascript,
+// need to refer to the type by its constructor function: 'new()'
+function create<T>(classType: {new(): T;}): T {
+    return new classType();
+}
+
+class Tester { }
+
+var testerInstance: Tester = create(Tester);
