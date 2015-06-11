@@ -19,6 +19,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.css" />
+    <Content Include="generics.html" />
     <Content Include="functions.html" />
     <Content Include="modules\external_exportequals\modules.html" />
     <Content Include="modules\internal\modules.html" />
@@ -34,6 +35,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="basicTypes.ts" />
+    <TypeScriptCompile Include="generics.ts" />
     <TypeScriptCompile Include="functions.ts" />
     <TypeScriptCompile Include="modules\external_exportequals\config_external.ts" />
     <TypeScriptCompile Include="modules\external\config_external.ts" />
