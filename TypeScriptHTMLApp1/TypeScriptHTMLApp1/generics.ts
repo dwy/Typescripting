@@ -19,3 +19,24 @@ interface GenericMeFunction {
     <T>(arg: T): T;
 }
 var meFunctionFromInterface: GenericMeFunction = me;
+
+// moving the type parameter to the interface
+interface GenericMeFunctionWithParameter<T> {
+    (arg: T): T;
+}
+// need to specify the type T
+var meFunctionFromInterface2: GenericMeFunctionWithParameter<string> = me;
+
+// generic class
+class TheBlackAdder<T> {
+    constructor(private values: T[]) {}
+    add(element: T): T[] {
+        this.values.push(element);
+        return this.values;
+    }
+}
+
+var adder = new TheBlackAdder([1]);
+var added = adder.add(42);
+
+document.body.innerHTML += added + "<br/>";
