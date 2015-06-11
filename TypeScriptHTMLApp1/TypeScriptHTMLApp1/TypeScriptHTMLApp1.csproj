@@ -33,6 +33,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="basicTypes.ts" />
+    <TypeScriptCompile Include="functions.ts" />
     <TypeScriptCompile Include="modules\external_exportequals\config_external.ts" />
     <TypeScriptCompile Include="modules\external\config_external.ts" />
     <TypeScriptCompile Include="modules\external_exportequals\modules.ts" />
