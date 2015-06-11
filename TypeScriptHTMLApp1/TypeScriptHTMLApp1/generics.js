@@ -1,4 +1,10 @@
 // ReSharper disable InconsistentNaming
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
 // type parameter
 function me(arg) {
     return arg;
@@ -47,4 +53,36 @@ var Tester = (function () {
     return Tester;
 })();
 var testerInstance = create(Tester);
+// constraint on prototype
+function findLabel(element) {
+    return element.prototype.label;
+}
+var Tester1 = (function (_super) {
+    __extends(Tester1, _super);
+    function Tester1() {
+        _super.apply(this, arguments);
+    }
+    return Tester1;
+})(Tester);
+var TesterLabel1 = (function () {
+    function TesterLabel1() {
+    }
+    return TesterLabel1;
+})();
+var Tester2 = (function (_super) {
+    __extends(Tester2, _super);
+    function Tester2() {
+        _super.apply(this, arguments);
+    }
+    return Tester2;
+})(Tester);
+var TesterLabel2 = (function () {
+    function TesterLabel2() {
+    }
+    return TesterLabel2;
+})();
+var numberOfCases = findLabel(Tester1).numberOfCases;
+var nameOfPhase = findLabel(Tester2).nameOfPhase;
+// error: TesterLabel2 has no property 'numberOfCases'
+// var numberOfCases: number = findLabel(Tester2).numberOfCases; 
 //# sourceMappingURL=generics.js.map

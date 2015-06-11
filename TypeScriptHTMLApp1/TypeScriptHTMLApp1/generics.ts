@@ -64,3 +64,30 @@ function create<T>(classType: {new(): T;}): T {
 class Tester { }
 
 var testerInstance: Tester = create(Tester);
+
+// constraint on prototype
+function findLabel<T extends Tester, U>(element: {
+        new(): T;
+        prototype: {label: U}}): U { // must have 'label' property
+
+    return element.prototype.label;
+}
+
+class Tester1 extends Tester {
+    label: TesterLabel1;
+}
+class TesterLabel1 {
+    numberOfCases: number;
+}
+
+class Tester2 extends Tester {
+    label: TesterLabel2;
+}
+class TesterLabel2 {
+    nameOfPhase: string;
+}
+
+var numberOfCases: number = findLabel(Tester1).numberOfCases;
+var nameOfPhase: string = findLabel(Tester2).nameOfPhase;
+// error: TesterLabel2 has no property 'numberOfCases'
+// var numberOfCases: number = findLabel(Tester2).numberOfCases;
