@@ -34,6 +34,7 @@ class TheBlackAdder<T> {
         this.values.push(element);
         return this.values;
     }
+    // static init(first: T): void {} // error: static members cannot reference type parameters
 }
 
 var adder = new TheBlackAdder([1]);
