@@ -19,7 +19,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.css" />
-    <Content Include="modules\external\modules2.html" />
+    <Content Include="modules\external_exportequals\modules.html" />
     <Content Include="modules\internal\modules.html" />
     <Content Include="classes.html" />
     <Content Include="classTypes.html" />
@@ -33,11 +33,11 @@
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="basicTypes.ts" />
-    <TypeScriptCompile Include="modules\external\config_external2.ts" />
+    <TypeScriptCompile Include="modules\external_exportequals\config_external.ts" />
     <TypeScriptCompile Include="modules\external\config_external.ts" />
-    <TypeScriptCompile Include="modules\external\modules2.ts" />
+    <TypeScriptCompile Include="modules\external_exportequals\modules.ts" />
     <TypeScriptCompile Include="modules\external\modules.ts" />
-    <TypeScriptCompile Include="modules\external\ValidationFactory2.ts" />
+    <TypeScriptCompile Include="modules\external_exportequals\ValidationFactory.ts" />
     <TypeScriptCompile Include="modules\external\ValidationFactory.ts" />
     <TypeScriptCompile Include="modules\external\Validation.ts" />
     <TypeScriptCompile Include="modules\internal\modules.ts" />

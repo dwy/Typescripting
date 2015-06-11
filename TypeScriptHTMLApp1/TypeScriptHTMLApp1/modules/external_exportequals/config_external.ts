@@ -2,4 +2,4 @@
     paths: { }
 });
 
-require(["modules2"]); 
+require(["modules"]); 

@@ -1,4 +1,4 @@
-﻿import validation = require("./Validation");
+﻿import validation = require("../external/Validation");
 
 class ValidatorFactory {
     static create(): validation.StringValidator {

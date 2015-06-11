@@ -1,5 +1,5 @@
-﻿import validation = require("./Validation");
-import factory = require("./ValidationFactory2");
+﻿import validation = require("../external/Validation");
+import factory = require("./ValidationFactory");
 
 // Note: since the ValidationFactory class is exported directly, no
 // need for factory.ValidatorFactory.create();
