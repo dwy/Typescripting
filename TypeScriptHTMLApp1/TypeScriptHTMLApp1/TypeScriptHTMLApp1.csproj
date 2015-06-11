@@ -24,11 +24,18 @@
     <Content Include="classTypes.html" />
     <Content Include="greeter.html" />
     <Content Include="index.html" />
+    <Content Include="modules\external\modules.html" />
+    <Content Include="Scripts\r.js" />
+    <Content Include="Scripts\require.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="basicTypes.ts" />
+    <TypeScriptCompile Include="modules\external\config_external.ts" />
+    <TypeScriptCompile Include="modules\external\modules.ts" />
+    <TypeScriptCompile Include="modules\external\ValidationFactory.ts" />
+    <TypeScriptCompile Include="modules\external\Validation.ts" />
     <TypeScriptCompile Include="modules\internal\modules.ts" />
     <TypeScriptCompile Include="modules\internal\validation_classes.ts" />
     <TypeScriptCompile Include="modules\internal\validation_interfaces.ts" />
@@ -36,8 +43,10 @@
     <TypeScriptCompile Include="classTypes.ts" />
     <TypeScriptCompile Include="greeter.ts" />
     <TypeScriptCompile Include="interfaces.ts" />
+    <TypeScriptCompile Include="Scripts\typings\requirejs\require.d.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -74,6 +83,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>amd</TypeScriptModuleKind>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
