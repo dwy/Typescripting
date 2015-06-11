@@ -1,3 +1,4 @@
+// ReSharper disable InconsistentNaming
 // type parameter
 function me(arg) {
     return arg;
@@ -8,4 +9,6 @@ document.body.innerHTML = me1 + "<br/>";
 document.body.innerHTML += me2 + "<br/>";
 // type of generic function
 var meFunction = me;
+var meFunctionObjectNotation = me;
+var meFunctionFromInterface = me;
 //# sourceMappingURL=generics.js.map
