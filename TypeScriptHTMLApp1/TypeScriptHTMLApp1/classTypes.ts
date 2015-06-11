@@ -3,6 +3,7 @@
 interface IAdaptable {
     name: string
     adapt(): boolean;
+    optionalAdapt?(): boolean;
 } 
 
 // explicit implementation
