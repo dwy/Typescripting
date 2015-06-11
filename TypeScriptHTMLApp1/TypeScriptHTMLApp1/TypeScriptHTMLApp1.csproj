@@ -19,6 +19,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.css" />
+    <Content Include="functions.html" />
     <Content Include="modules\external_exportequals\modules.html" />
     <Content Include="modules\internal\modules.html" />
     <Content Include="classes.html" />

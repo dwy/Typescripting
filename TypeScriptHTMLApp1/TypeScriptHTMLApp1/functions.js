@@ -28,4 +28,25 @@ var context = {
 // }
 var valuator = context.createValuator();
 var valuated = valuator();
+function getDetails(x) {
+    if (typeof x === "number") {
+        return "you chose number " + x;
+    }
+    if (typeof x === "string") {
+        return x.length;
+    }
+    if (typeof x === "object") {
+        return {
+            message: "you chose " + x["name"] + "=" + x["value"]
+        };
+    }
+    return "you chose something: " + x;
+}
+var details1 = getDetails(12);
+var details2 = getDetails("four");
+var details3 = getDetails({ name: "price", value: 5 });
+// var details4 = getDetails({}); // error, invalid parameter
+document.body.innerHTML = details1 + "<br/>";
+document.body.innerHTML += details2 + "<br/>";
+document.body.innerHTML += details3.message + "<br/>";
 //# sourceMappingURL=functions.js.map
