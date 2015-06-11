@@ -19,7 +19,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.css" />
-    <Content Include="modules.html" />
+    <Content Include="modules\internal\modules.html" />
     <Content Include="classes.html" />
     <Content Include="classTypes.html" />
     <Content Include="greeter.html" />
