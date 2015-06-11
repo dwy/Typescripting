@@ -27,4 +27,12 @@ var TheBlackAdder = (function () {
 var adder = new TheBlackAdder([1]);
 var added = adder.add(42);
 document.body.innerHTML += added + "<br/>";
+// constraints
+// parameter must have at least a 'text' property of type string
+// Note: can also define an interface with member text: string;
+function searchText(somewhere, element) {
+    return somewhere.text.search(element);
+}
+var index = searchText({ text: "abc" }, "b");
+document.body.innerHTML += index + "<br/>";
 //# sourceMappingURL=generics.js.map
