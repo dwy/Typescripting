@@ -19,6 +19,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.css" />
+    <Content Include="declaration_merging.html" />
     <Content Include="mixins.html" />
     <Content Include="generics.html" />
     <Content Include="functions.html" />
@@ -36,6 +37,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="basicTypes.ts" />
+    <TypeScriptCompile Include="declaration_merging.ts" />
     <TypeScriptCompile Include="generics.ts" />
     <TypeScriptCompile Include="functions.ts" />
     <TypeScriptCompile Include="mixins.ts" />
