@@ -117,4 +117,21 @@ var num = Direction.North;
 var member = 3;
 // values from different enums are incompatible
 //var direction: Direction = Member.Toe; // error
+// class compatibility
+var Car = (function () {
+    function Car(manufacturer) {
+    } // static
+    Car.build = function () { return new Car("Fiat"); };
+    return Car;
+})();
+var AirPlane = (function () {
+    function AirPlane(year) {
+    } // static
+    return AirPlane;
+})();
+var car = new Car("Opel");
+var airPlane = new AirPlane(1974);
+// Car and Airplane are compatible with each other, despite different static members
+car = airPlane;
+airPlane = car;
 //# sourceMappingURL=type_inference.js.map

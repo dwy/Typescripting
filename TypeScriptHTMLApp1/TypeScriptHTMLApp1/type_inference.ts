@@ -103,3 +103,21 @@ var member: Member = 3;
 
 // values from different enums are incompatible
 //var direction: Direction = Member.Toe; // error
+
+// class compatibility
+
+class Car {
+    colour: string;
+    constructor(manufacturer: string) { } // static
+    static build(): Car { return new Car("Fiat"); }
+}
+class AirPlane {
+    colour: string;
+    constructor(year: number) {} // static
+}
+
+var car = new Car("Opel");
+var airPlane = new AirPlane(1974);
+// Car and Airplane are compatible with each other, despite different static members
+car = airPlane;
+airPlane = car;
