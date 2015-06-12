@@ -103,3 +103,25 @@ var text: string = stringConcat("one", "two", "three");
 document.body.innerHTML += "concatenated: " + text + "<br/>";
 document.body.innerHTML += "hi: " + stringConcat.hi() + "<br/>";
 
+// merging a module with an enum
+enum TaskStatus {
+    Success, Running, Waiting
+}
+
+// adding static members to the enum
+module TaskStatus {
+    export function next(current: TaskStatus) {
+        if (current === TaskStatus.Waiting) {
+            return TaskStatus.Running;
+        }
+        if (current === TaskStatus.Running) {
+            return TaskStatus.Success;
+        }
+        return TaskStatus.Waiting;
+    }
+}
+
+var next = TaskStatus.next;
+var taskStatus: TaskStatus = next(next(TaskStatus.Success));
+document.body.innerHTML += "taskStatus: " + taskStatus + "<br/>";
+

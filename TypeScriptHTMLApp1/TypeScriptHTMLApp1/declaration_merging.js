@@ -86,4 +86,28 @@ var stringConcat;
 var text = stringConcat("one", "two", "three");
 document.body.innerHTML += "concatenated: " + text + "<br/>";
 document.body.innerHTML += "hi: " + stringConcat.hi() + "<br/>";
+// merging a module with an enum
+var TaskStatus;
+(function (TaskStatus) {
+    TaskStatus[TaskStatus["Success"] = 0] = "Success";
+    TaskStatus[TaskStatus["Running"] = 1] = "Running";
+    TaskStatus[TaskStatus["Waiting"] = 2] = "Waiting";
+})(TaskStatus || (TaskStatus = {}));
+// adding static members to the enum
+var TaskStatus;
+(function (TaskStatus) {
+    function next(current) {
+        if (current === TaskStatus.Waiting) {
+            return TaskStatus.Running;
+        }
+        if (current === TaskStatus.Running) {
+            return TaskStatus.Success;
+        }
+        return TaskStatus.Waiting;
+    }
+    TaskStatus.next = next;
+})(TaskStatus || (TaskStatus = {}));
+var next = TaskStatus.next;
+var taskStatus = next(next(TaskStatus.Success));
+document.body.innerHTML += "taskStatus: " + taskStatus + "<br/>";
 //# sourceMappingURL=declaration_merging.js.map
