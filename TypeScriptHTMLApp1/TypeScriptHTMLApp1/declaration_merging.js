@@ -48,4 +48,22 @@ module Animals {
     export class Elephant { }
 }
 */
+// merging a module with a class
+var Album = (function () {
+    function Album() {
+    }
+    return Album;
+})();
+// module declaration must follow the declaration it will merge with
+var Album;
+(function (Album) {
+    var AlbumLabel = (function () {
+        function AlbumLabel() {
+        }
+        return AlbumLabel;
+    })();
+    Album.AlbumLabel = AlbumLabel;
+})(Album || (Album = {}));
+var album = new Album();
+album.label = new Album.AlbumLabel();
 //# sourceMappingURL=declaration_merging.js.map

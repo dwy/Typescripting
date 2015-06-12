@@ -74,3 +74,15 @@ module Animals {
 }
 */
 
+// merging a module with a class
+class Album {
+    label: Album.AlbumLabel;
+}
+// module declaration must follow the declaration it will merge with
+module Album {
+    export class AlbumLabel { }
+}
+
+var album = new Album();
+album.label = new Album.AlbumLabel();
+
