@@ -14,18 +14,31 @@ var Animals;
     var Eagle = (function () {
         function Eagle() {
         }
+        // someMember: NotExported; // error
+        Eagle.prototype.screech = function () {
+            return localValue;
+        };
         return Eagle;
     })();
     Animals.Eagle = Eagle;
+    var localValue = "I am local to this module";
 })(Animals || (Animals = {}));
 var Animals;
 (function (Animals) {
     var Elephant = (function () {
         function Elephant() {
         }
+        Elephant.prototype.talk = function () {
+            // return localValue; // error
+        };
         return Elephant;
     })();
     Animals.Elephant = Elephant;
+    var NotExported = (function () {
+        function NotExported() {
+        }
+        return NotExported;
+    })();
 })(Animals || (Animals = {}));
 // exported members are merged: 
 /*

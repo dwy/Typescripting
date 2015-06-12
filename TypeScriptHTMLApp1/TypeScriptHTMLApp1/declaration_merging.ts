@@ -47,11 +47,22 @@ interface ContentGenerator {
 // module merging
 module Animals {
     export interface CanFly { maximumAltitude: number; }
-    export class Eagle { }
+    export class Eagle {
+        // someMember: NotExported; // error
+        screech() {
+            return localValue;
+        }
+    }
+    var localValue: string = "I am local to this module";
 }
 
 module Animals {
-    export class Elephant { }
+    export class Elephant {
+        talk() {
+            // return localValue; // error
+        }
+    }
+    class NotExported { }
 }
 
 // exported members are merged: 
@@ -62,3 +73,4 @@ module Animals {
     export class Elephant { }
 }
 */
+
