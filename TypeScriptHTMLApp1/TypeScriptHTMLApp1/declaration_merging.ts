@@ -81,8 +81,10 @@ class Album {
 // module declaration must follow the declaration it will merge with
 module Album {
     export class AlbumLabel { }
+    // adding a new static member to existing class
+    export var totalCount: number = 0;
 }
 
 var album = new Album();
+Album.totalCount++;
 album.label = new Album.AlbumLabel();
-

@@ -63,7 +63,10 @@ var Album;
         return AlbumLabel;
     })();
     Album.AlbumLabel = AlbumLabel;
+    // adding a new static member to existing class
+    Album.totalCount = 0;
 })(Album || (Album = {}));
 var album = new Album();
+Album.totalCount++;
 album.label = new Album.AlbumLabel();
 //# sourceMappingURL=declaration_merging.js.map
