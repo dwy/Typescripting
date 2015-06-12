@@ -81,4 +81,12 @@ function createCreatures() {
 }
 // infers Creature[] because of the return type of the function
 var creatures = createCreatures();
+// type compatibility
+// functions
+var x = function (a) { return 0; };
+var y = function (b, s) { return 0; };
+// OK, each parameter in x has a corresponding parameter with compatible type in y
+y = x;
+// error, no string parameter in x
+//x = y; 
 //# sourceMappingURL=type_inference.js.map

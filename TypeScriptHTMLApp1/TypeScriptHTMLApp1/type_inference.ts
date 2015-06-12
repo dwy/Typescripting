@@ -60,3 +60,14 @@ function createCreatures(): Creature[] {
 
 // infers Creature[] because of the return type of the function
 var creatures = createCreatures();
+
+// type compatibility
+
+// functions
+var x = (a: number) => 0;
+var y = (b: number, s: string) => 0;
+
+// OK, each parameter in x has a corresponding parameter with compatible type in y
+y = x;
+// error, no string parameter in x
+//x = y; 
