@@ -92,8 +92,29 @@ y = x;
 // return types
 var a = function () { return ({ name: "Albert" }); };
 var b = function () { return ({ name: "Beatrice", colour: "blue" }); };
-// OK, each member of the return type of a is in b
+// OK, each member of the return type of a is in b (b is a subtype of a)
 a = b;
-// error, a has no 'colour' property in return type
-//b = a; 
+// error, a has no 'colour' property in return type (a is not a subtype of b)
+//b = a
+// enum compatibility
+var Direction;
+(function (Direction) {
+    Direction[Direction["North"] = 1] = "North";
+    Direction[Direction["East"] = 2] = "East";
+    Direction[Direction["South"] = 3] = "South";
+    Direction[Direction["West"] = 4] = "West";
+})(Direction || (Direction = {}));
+var Member;
+(function (Member) {
+    Member[Member["Leg"] = 0] = "Leg";
+    Member[Member["Arm"] = 1] = "Arm";
+    Member[Member["Head"] = 2] = "Head";
+    Member[Member["Toe"] = 3] = "Toe";
+})(Member || (Member = {}));
+// enum compatible with number
+var num = Direction.North;
+// number compatible with enum
+var member = 3;
+// values from different enums are incompatible
+//var direction: Direction = Member.Toe; // error
 //# sourceMappingURL=type_inference.js.map

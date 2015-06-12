@@ -76,7 +76,30 @@ y = x;
 var a = () => ({ name: "Albert" });
 var b = () => ({ name: "Beatrice", colour: "blue" });
 
-// OK, each member of the return type of a is in b
+// OK, each member of the return type of a is in b (b is a subtype of a)
 a = b;
-// error, a has no 'colour' property in return type
-//b = a;
+// error, a has no 'colour' property in return type (a is not a subtype of b)
+//b = a
+
+// enum compatibility
+enum Direction {
+    North = 1,
+    East = 2,
+    South = 3,
+    West = 4
+}
+enum Member {
+    Leg = 0,
+    Arm = 1,
+    Head = 2,
+    Toe = 3
+}
+
+// enum compatible with number
+var num: number = Direction.North;
+
+// number compatible with enum
+var member: Member = 3;
+
+// values from different enums are incompatible
+//var direction: Direction = Member.Toe; // error
