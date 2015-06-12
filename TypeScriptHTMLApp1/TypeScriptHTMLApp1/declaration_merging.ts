@@ -20,7 +20,7 @@ var player: Player = {
 
 player.play();
 
-document.body.innerHTML += "player score: " + player.score;
+document.body.innerHTML += "player score: " + player.score + "<br/>";
 
 // function overload
 
@@ -88,3 +88,18 @@ module Album {
 var album = new Album();
 Album.totalCount++;
 album.label = new Album.AlbumLabel();
+
+// merging a module with a function
+function stringConcat(...elements: string[]) : string {
+    return elements.join(stringConcat.separator);
+}
+
+module stringConcat {
+    export var separator = " -- ";
+    export function hi(): string { return "hello"; }
+}
+
+var text: string = stringConcat("one", "two", "three");
+document.body.innerHTML += "concatenated: " + text + "<br/>";
+document.body.innerHTML += "hi: " + stringConcat.hi() + "<br/>";
+

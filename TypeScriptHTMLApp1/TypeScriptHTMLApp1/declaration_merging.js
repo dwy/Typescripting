@@ -7,7 +7,7 @@ var player = {
     }
 };
 player.play();
-document.body.innerHTML += "player score: " + player.score;
+document.body.innerHTML += "player score: " + player.score + "<br/>";
 // module merging
 var Animals;
 (function (Animals) {
@@ -69,4 +69,21 @@ var Album;
 var album = new Album();
 Album.totalCount++;
 album.label = new Album.AlbumLabel();
+// merging a module with a function
+function stringConcat() {
+    var elements = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        elements[_i - 0] = arguments[_i];
+    }
+    return elements.join(stringConcat.separator);
+}
+var stringConcat;
+(function (stringConcat) {
+    stringConcat.separator = " -- ";
+    function hi() { return "hello"; }
+    stringConcat.hi = hi;
+})(stringConcat || (stringConcat = {}));
+var text = stringConcat("one", "two", "three");
+document.body.innerHTML += "concatenated: " + text + "<br/>";
+document.body.innerHTML += "hi: " + stringConcat.hi() + "<br/>";
 //# sourceMappingURL=declaration_merging.js.map
