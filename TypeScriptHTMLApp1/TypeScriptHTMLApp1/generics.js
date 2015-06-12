@@ -14,7 +14,7 @@ var me2 = me(["hi", "sup"]);
 document.body.innerHTML = me1 + "<br/>";
 document.body.innerHTML += me2 + "<br/>";
 // type of generic function
-var meFunction = me;
+var meFunctionLambdaNotation = me;
 var meFunctionObjectNotation = me;
 var meFunctionFromInterface = me;
 // need to specify the type T

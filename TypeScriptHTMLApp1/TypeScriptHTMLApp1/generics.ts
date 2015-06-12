@@ -12,7 +12,7 @@ document.body.innerHTML = me1 + "<br/>";
 document.body.innerHTML += me2 + "<br/>";
 
 // type of generic function
-var meFunction: <T>(arg: T) => T = me;
+var meFunctionLambdaNotation: <T>(arg: T) => T = me;
 var meFunctionObjectNotation: {<T>(arg: T):  T} = me;
 
 interface GenericMeFunction {

@@ -156,7 +156,7 @@ var list2B: IList2<boolean>;
 
 // for generic types that do not have their type arguments specified, compatibility is checked using 'any'
 var f1 = <T>(x: T): void => { };
-var f2 = <U>(y: U): void => {  };
+var f2 = <U>(y: U): void => { };
 
 // compatible: '(x: any) => void' matches '(y: any) => void'
 f1 = f2;
