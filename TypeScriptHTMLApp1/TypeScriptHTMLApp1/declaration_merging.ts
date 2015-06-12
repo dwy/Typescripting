@@ -43,3 +43,22 @@ interface ContentGenerator {
     generate(regex: string): void;
     generate(doc: Document): string;
 }
+
+// module merging
+module Animals {
+    export interface CanFly { maximumAltitude: number; }
+    export class Eagle { }
+}
+
+module Animals {
+    export class Elephant { }
+}
+
+// exported members are merged: 
+/*
+module Animals {
+    export interface CanFly { maximumAltitude: number; }
+    export class Eagle { }
+    export class Elephant { }
+}
+*/
