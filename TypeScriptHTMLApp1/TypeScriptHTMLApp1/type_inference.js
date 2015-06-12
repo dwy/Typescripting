@@ -151,4 +151,10 @@ var list2A;
 var list2B;
 //list2A = list2B; // error
 //list2B = list2A; // error
+// for generic types that do not have their type arguments specified, compatibility is checked using 'any'
+var f1 = function (x) { };
+var f2 = function (y) { };
+// compatible: '(x: any) => void' matches '(y: any) => void'
+f1 = f2;
+f2 = f1;
 //# sourceMappingURL=type_inference.js.map
