@@ -39,8 +39,8 @@ interface ContentGenerator {
 // the functions defined later will have higher precedence.
 // the merged interface will be:
 interface ContentGenerator {
-    generate(text: "stuff"): Document;
-    generate(regex: string): void;
+    generate(text: "stuff"): HTMLElement; // a more specialised overload of the function below
+    generate(text: string): Element;
     generate(doc: Document): string;
 }
 
