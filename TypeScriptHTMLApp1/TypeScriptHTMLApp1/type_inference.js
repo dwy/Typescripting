@@ -142,5 +142,13 @@ var RaceCar = (function () {
 })();
 var raceCar = new RaceCar();
 car = raceCar; // OK, RaceCar has at least all of Car's members
-//raceCar = car; // error, 'hasTurbo' missing from Car;
+var listA;
+var listB;
+// compatible because they have the same structure
+listA = listB;
+listB = listA;
+var list2A;
+var list2B;
+//list2A = list2B; // error
+//list2B = list2A; // error
 //# sourceMappingURL=type_inference.js.map

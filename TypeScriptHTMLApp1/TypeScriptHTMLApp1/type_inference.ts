@@ -131,3 +131,25 @@ var raceCar = new RaceCar();
 
 car = raceCar; // OK, RaceCar has at least all of Car's members
 //raceCar = car; // error, 'hasTurbo' missing from Car;
+
+// generics compatibility
+
+interface IList<T> { }
+
+var listA: IList<number>;
+var listB: IList<boolean>;
+
+// compatible because they have the same structure
+listA = listB;
+listB = listA;
+
+// type parameters only affect compatibility when consumed as part of a member
+interface IList2<T> {
+    current: T; // T is used by a member and hence affects compatibility
+}
+
+var list2A: IList2<number>;
+var list2B: IList2<boolean>;
+
+//list2A = list2B; // error
+//list2B = list2A; // error
