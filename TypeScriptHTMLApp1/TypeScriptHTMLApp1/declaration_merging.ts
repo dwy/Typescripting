@@ -21,3 +21,25 @@ var player: Player = {
 player.play();
 
 document.body.innerHTML += "player score: " + player.score;
+
+// function overload
+
+interface ContentGenerator {
+    generate(doc: Document): string;
+}
+
+interface ContentGenerator {
+    generate(regex: string): void;
+}
+
+interface ContentGenerator {
+    generate(text: "stuff"): Document;
+}
+
+// the functions defined later will have higher precedence.
+// the merged interface will be:
+interface ContentGenerator {
+    generate(text: "stuff"): Document;
+    generate(regex: string): void;
+    generate(doc: Document): string;
+}
