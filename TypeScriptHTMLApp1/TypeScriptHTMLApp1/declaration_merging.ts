@@ -3,6 +3,7 @@
 // merging interfaces
 interface Player {
     play(): number;
+    // score: number; // error: non-function members must be unique
 }
 
 interface Player {
