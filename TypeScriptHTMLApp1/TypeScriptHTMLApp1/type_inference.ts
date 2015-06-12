@@ -71,3 +71,12 @@ var y = (b: number, s: string) => 0;
 y = x;
 // error, no string parameter in x
 //x = y; 
+
+// return types
+var a = () => ({ name: "Albert" });
+var b = () => ({ name: "Beatrice", colour: "blue" });
+
+// OK, each member of the return type of a is in b
+a = b;
+// error, a has no 'colour' property in return type
+//b = a;

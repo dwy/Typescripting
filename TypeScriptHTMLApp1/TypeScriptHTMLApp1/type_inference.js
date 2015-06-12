@@ -89,4 +89,11 @@ var y = function (b, s) { return 0; };
 y = x;
 // error, no string parameter in x
 //x = y; 
+// return types
+var a = function () { return ({ name: "Albert" }); };
+var b = function () { return ({ name: "Beatrice", colour: "blue" }); };
+// OK, each member of the return type of a is in b
+a = b;
+// error, a has no 'colour' property in return type
+//b = a; 
 //# sourceMappingURL=type_inference.js.map
