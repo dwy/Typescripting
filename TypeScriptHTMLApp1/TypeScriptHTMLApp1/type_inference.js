@@ -134,4 +134,13 @@ var airPlane = new AirPlane(1974);
 // Car and Airplane are compatible with each other, despite different static members
 car = airPlane;
 airPlane = car;
+// private members affect class compatibility
+var RaceCar = (function () {
+    function RaceCar() {
+    }
+    return RaceCar;
+})();
+var raceCar = new RaceCar();
+car = raceCar; // OK, RaceCar has at least all of Car's members
+//raceCar = car; // error, 'hasTurbo' missing from Car;
 //# sourceMappingURL=type_inference.js.map

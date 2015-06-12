@@ -121,3 +121,13 @@ var airPlane = new AirPlane(1974);
 // Car and Airplane are compatible with each other, despite different static members
 car = airPlane;
 airPlane = car;
+
+// private members affect class compatibility
+class RaceCar {
+    colour: string;
+    private hasTurbo: boolean;
+}
+var raceCar = new RaceCar();
+
+car = raceCar; // OK, RaceCar has at least all of Car's members
+//raceCar = car; // error, 'hasTurbo' missing from Car;
