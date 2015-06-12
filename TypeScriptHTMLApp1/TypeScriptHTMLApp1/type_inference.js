@@ -64,4 +64,21 @@ var Eagle = (function (_super) {
 var animals3 = [new Duck(), new Eagle()];
 // can force to Bear[] because bear is compatible with Duck and Eagle
 var animals3B = animals3;
+// contextual type: the type of an expression is implied by its location
+// from the function onmousedown, the compiler infers the type of the parameter to be 'MouseEvent'.
+window.onmousedown = function (mouseEvent) {
+    //console.log(mouseEvent.butt);  // error 
+    console.log(mouseEvent.button);
+};
+// contextual type is ignored when the type is set explicitely
+window.onmousedown = function (mouseEvent) {
+    console.log(mouseEvent.butt); // no error 
+    console.log(mouseEvent.button);
+};
+// in the context of this function, the return type is used to infer the best-suited type for the array
+function createCreatures() {
+    return [new Adder(), new Bear(), new Chimp(), new Duck(), new Eagle()];
+}
+// infers Creature[] because of the return type of the function
+var creatures = createCreatures();
 //# sourceMappingURL=type_inference.js.map
